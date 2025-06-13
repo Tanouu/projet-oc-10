@@ -1,0 +1,16 @@
+name: First GitHub Action
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Say hello
+        run: echo "👋 Bonjour BobApp depuis GitHub Actions !"
