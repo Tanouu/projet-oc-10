@@ -1,5 +1,5 @@
 name: CI - Backend & Frontend Coverage
-
+run-name: Backend & Frontend Coverage
 on:
   push:
     branches: [main]
