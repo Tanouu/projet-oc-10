@@ -41,6 +41,12 @@ jobs:
           name: backend-coverage-report
           path: back/target/site/jacoco/
 
+      - name: Download backend classes artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-classes
+          path: back/target/classes
+
       - name: Cache SonarCloud packages
         uses: actions/cache@v4
         with:
@@ -52,5 +58,10 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.modules=back,front
+            -Dback.sonar.coverage.jacoco.xmlReportPaths=back/target/site/jacoco/jacoco.xml
+            -Dback.sonar.java.binaries=back/target/classes
+            -Dfront.sonar.typescript.lcov.reportPaths=front/coverage/bobapp/lcov.info
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
