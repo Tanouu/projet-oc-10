@@ -56,5 +56,11 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.modules=back,front
+            -Dback.sonar.sources=back/src/main/java
+            -Dback.sonar.coverage.jacoco.xmlReportPaths=back/target/site/jacoco/jacoco.xml
+            -Dfront.sonar.sources=front/src
+            -Dfront.sonar.typescript.lcov.reportPaths=front/coverage/bobapp/lcov.info
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
