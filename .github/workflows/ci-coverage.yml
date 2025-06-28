@@ -1,9 +1,8 @@
 name: CI - Backend & Frontend Coverage
 run-name: Backend & Frontend Coverage
 on:
-  push:
-    branches: [main]
-  pull_request:
+  workflow_call:
+
 
 jobs:
   backend-tests:
