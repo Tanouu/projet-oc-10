@@ -3,7 +3,6 @@ run-name: SonarQube analysis
 
 on:
   workflow_call:
-    types: [opened, synchronize, reopened]
 
 jobs:
   sonarcloud:
