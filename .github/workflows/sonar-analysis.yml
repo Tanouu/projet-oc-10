@@ -23,7 +23,7 @@ jobs:
       - name: Download frontend coverage artifact
         uses: actions/download-artifact@v4
         with:
-          name: frontend-coverage-report
+          name: custom-frontend-coverage-report
           path: front/coverage/bobapp/
 
       - name: Set up Java 11
@@ -35,7 +35,7 @@ jobs:
       - name: Download backend coverage artifact
         uses: actions/download-artifact@v4
         with:
-          name: backend-coverage-report
+          name: custom-backend-coverage-report
           path: back/target/site/jacoco/
 
       - name: Cache SonarCloud packages
