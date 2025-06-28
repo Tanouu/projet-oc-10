@@ -3,6 +3,11 @@ run-name: Build & Push Docker Images to Docker Hub
 
 on:
   workflow_call:
+    secrets:
+      DOCKER_USERNAME:
+        required: true
+      DOCKER_PASSWORD:
+        required: true
 
 jobs:
   build-and-push-backend:
