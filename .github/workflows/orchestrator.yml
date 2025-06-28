@@ -6,11 +6,7 @@ on:
   pull_request:
 
 jobs:
-  run-ci-coverage:
-    uses: ./.github/workflows/ci-coverage.yml
-
   run-sonar-analysis:
-    needs: run-ci-coverage
     uses: ./.github/workflows/ci-coverage.yml
 
 
