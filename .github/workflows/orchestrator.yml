@@ -1,0 +1,18 @@
+name: Orchestrator Workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  run-ci-coverage:
+    uses: tanouu/bobapp/.github/workflows/ci-coverage.yml@main
+
+  run-sonar-analysis:
+    needs: run-ci-coverage
+    uses: tanouu/bobapp/.github/workflows/sonar-analysis.yml@main
+
+  run-docker-publish:
+    needs: run-sonar-analysis
+    uses: tanouu/bobapp/.github/workflows/docker-publish.yml@main

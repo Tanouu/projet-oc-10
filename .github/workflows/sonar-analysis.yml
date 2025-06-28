@@ -2,10 +2,7 @@ name: SonarQube
 run-name: SonarQube analysis
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_call:
     types: [opened, synchronize, reopened]
 
 jobs:

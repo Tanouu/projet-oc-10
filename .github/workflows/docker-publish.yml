@@ -2,8 +2,7 @@ name: Docker Publish Only
 run-name: Build & Push Docker Images to Docker Hub
 
 on:
-  push:
-    branches: [main]
+  workflow_call:
 
 jobs:
   build-and-push-backend:
