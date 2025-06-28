@@ -12,7 +12,12 @@ jobs:
   run-sonar-analysis:
     needs: run-ci-coverage
     uses: ./.github/workflows/sonar-analysis.yml
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   run-docker-publish:
     needs: run-sonar-analysis
     uses: ./.github/workflows/docker-publish.yml
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
