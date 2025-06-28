@@ -6,10 +6,13 @@ on:
   pull_request:
 
 jobs:
-  run-sonar-analysis:
+  run-ci-coverage:
     uses: ./.github/workflows/ci-coverage.yml
 
+  run-sonar-analysis:
+    needs: run-ci-coverage
+    uses: ./.github/workflows/sonar-analysis.yml
 
   run-docker-publish:
     needs: run-sonar-analysis
-    uses: ./.github/workflows/ci-coverage.yml
+    uses: ./.github/workflows/docker-publish.yml
