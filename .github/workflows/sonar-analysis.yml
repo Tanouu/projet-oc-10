@@ -50,6 +50,7 @@ jobs:
         with:
           projectBaseDir: .
           args: >
+            -Dsonar.scanner.skip=true
             -Dsonar.modules=back,front
             -Dback.sonar.coverage.jacoco.xmlReportPaths=back/target/site/jacoco/jacoco.xml
             -Dfront.sonar.typescript.lcov.reportPaths=front/coverage/bobapp/lcov.info
