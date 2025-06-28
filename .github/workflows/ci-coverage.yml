@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run tests with JaCoCo
-        run: mvn clean test
+        run: mvn clean verify
 
       - name: Upload JaCoCo coverage report
         uses: actions/upload-artifact@v4
