@@ -55,6 +55,7 @@ jobs:
           args: >
             -Dsonar.modules=back,front
             -Dback.sonar.coverage.jacoco.xmlReportPaths=back/target/site/jacoco/jacoco.xml
+            -Dback.sonar.java.binaries=back/target/classes
             -Dfront.sonar.typescript.lcov.reportPaths=front/coverage/bobapp/lcov.info
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
