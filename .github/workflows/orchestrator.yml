@@ -6,17 +6,13 @@ on:
   pull_request:
 
 jobs:
-  run-ci-coverage:
-    uses: ./.github/workflows/ci-coverage.yml
-
-  run-sonar-analysis:
-    needs: run-ci-coverage
-    uses: ./.github/workflows/sonar-analysis.yml
+  run-ci-sonar:
+    uses: ./.github/workflows/ci-sonar.yml
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   run-docker-publish:
-    needs: run-sonar-analysis
+    needs: run-ci-sonar
     uses: ./.github/workflows/docker-publish.yml
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
