@@ -20,13 +20,13 @@ Launch Front-end:
 
 ### Docker
 
-Build the container:
+Pull the latest front image:
 
-> docker build -t bobapp-front .  
+> docker pull tanouu/bobapp-front
 
 Start the container:
 
-> docker run -p 8080:8080 --name bobapp-front -d bobapp-front
+> docker run -d -p 4200:80 tanouu/bobapp-front
 
 ## Back-end
 
@@ -48,10 +48,16 @@ Launch the tests:
 
 ### Docker
 
-Build the container:
+Pull the latest back image:
 
-> docker build -t bobapp-back .  
+> docker pull tanouu/bobapp-back
 
 Start the container:
 
-> docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+> docker run -d -p 8080:8080 tanouu/bobapp-back
+
+The frontend will be available at:
+http://localhost:4200
+
+The backend API is available at:
+http://localhost:8080/api/joke
