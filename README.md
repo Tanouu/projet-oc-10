@@ -61,3 +61,11 @@ http://localhost:4200
 
 The backend API is available at:
 http://localhost:8080/api/joke
+
+Sonar analysis is available at:
+
+https://sonarcloud.io/summary/overall?id=Tanouu_projet-oc-10&branch=main
+
+Docker Hub:
+
+https://hub.docker.com/u/tanouu
